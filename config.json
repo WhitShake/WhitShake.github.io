@@ -8,9 +8,9 @@
   },
   "site": {
     "title": "Whitney Shake",
-    "description": "Developer Portfolio",
+    "description": "Data Engineer | Back End Developer",
     "seo": {
-      "title": "Whitney Shake - Developer Portfolio",
+      "title": "Whitney Shake - Portfolio",
       "description": "Developer Portfolio of Whitney Shake",
       "keywords": "developer, portfolio, github",
       "author": "Whitney Shake",
@@ -22,7 +22,7 @@
   },
   "header": {
     "greeting": "Whitney Shake",
-    "tagline": "Developer and Creator."
+    "tagline": "Building reliable systems for mission-driven organizations."
   },
   "social_links": [
     {
@@ -30,12 +30,20 @@
       "url": "https://github.com/WhitShake",
       "icon": "github",
       "required": true
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/whitneyshake",
+      "icon": "linkedin",
+      "required": true
     }
   ],
   "github_username": "WhitShake",
   "about": {
     "paragraphs": [
-      "Welcome to my portfolio! I'm passionate about creating amazing digital experiences and solving complex problems through code.",
+      "Hello! I'm motivated by work that improves access to essential services and strengthens the systems people rely on every day. ",
+      " I'm particularly interested in how technology can support better decision-making through high-quality data, reliable infrastructure, ",
+      "and thoughtfully designed tools — whether in healthcare, public services, non-profits, or other mission-driven spaces.",
       "This portfolio showcases my journey, projects, and skills. Feel free to explore and get in touch if you'd like to collaborate!"
     ]
   },
@@ -43,12 +51,11 @@
     "title": "Featured Projects",
     "items": [
       {
-        "name": "Portfolio Website",
+        "name": "LAPS Healthcare Data Pipeline",
         "date": "June 3, 2026",
         "description": [
-          "A modern, responsive portfolio website built with vanilla JavaScript",
-          "Features dark/light mode, dynamic content loading, and GitHub integration",
-          "Fully configurable through JSON with automated README generation"
+          "A production-grade healthcare data pipeline in Python and Selenium to ingest, clean, normalize, validate, ",
+          "and structure 100,000+ physician records and 6,500+ linked scheduling entities for longitudinal research and analytics."
         ],
         "picture": "assets/projects/Placeholder.png",
         "link": {
@@ -82,9 +89,9 @@
       {
         "name": "Programming Languages & Technologies",
         "items": [
-          "JavaScript",
           "Python",
-          "Java",
+          "SQL",
+          "JavaScript",
           "TypeScript"
         ]
       },
@@ -93,18 +100,19 @@
         "items": [
           "Git",
           "GitHub",
-          "VS Code",
-          "Docker"
+          "Visual Studio",
+          "Docker",
+          "AI-Assisted Development"
         ]
       },
       {
         "name": "Certifications",
         "items": [
           {
-            "name": "Add your certification name here",
-            "url": "https://example.com/your-certification-link"
+            "name": "Graduate - Ada Developers Academy",
+            "url": "https://adadevelopersacademy.org/"
           },
-          "You can also add certifications without links"
+          "Databricks Fundamentals"
         ]
       }
     ]
