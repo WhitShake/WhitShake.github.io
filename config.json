@@ -123,12 +123,8 @@
       {
         "name": "Certifications",
         "items": [
-          {
-            "name": "B.S., Science - Portland State University"
-          },
-          {
-            "name": "Graduate - Ada Developers Academy"
-          },
+          "B.S., Science - Portland State University",
+          "Graduate - Ada Developers Academy",
           "Databricks Fundamentals"
         ]
       }
