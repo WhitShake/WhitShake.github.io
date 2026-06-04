@@ -41,7 +41,7 @@
   "github_username": "WhitShake",
   "about": {
     "paragraphs": [
-      "Hello! I'm motivated by work that improves access to essential services and strengthens the systems people rely on every day. I'm particularly interested in how technology can support better decision-making through high-quality data, reliable infrastructure, and thoughtfully designed tools — whether in healthcare, public services, non-profits, or other mission-driven spaces.",
+      "I'm motivated by work that improves access to essential services and strengthens the systems people rely on every day. I'm particularly interested in how technology can support better decision-making through high-quality data, reliable infrastructure, and thoughtfully designed tools — whether in healthcare, public services, non-profits, or other mission-driven spaces.",
       "This portfolio showcases my journey, projects, and skills. Feel free to explore and get in touch if you'd like to collaborate!"
     ]
   },
@@ -67,17 +67,34 @@
     "title": "Professional Experience",
     "jobs": [
       {
-        "company": "Your Company Name",
-        "role": "Your Job Title",
-        "date": "Start Date - Present",
+        "company": "Tulane University & Portland State Univeristy - Longitudinal Access to Physicians Study",
+        "role": "Data Engineer (Contract)",
+        "date": "07/2025 - 04/2026",
         "responsibilities": [
-          "Add your key responsibilities and achievements here",
-          "Include specific technologies you worked with",
-          "Mention any notable projects or impact metrics",
-          "Update this section with your actual work experience"
-        ],
-        "logo": "assets/logos/Placeholder_Logo.png",
-        "logo_dark": "assets/logos/Placeholder_Logo.png"
+          "Optimized a healthcare data pipeline from 3-10 minutes per record to under 1 second while scaling ingestion to 100,000 physician records and 6,500 linked scheduling entities.",
+          "Built production ETL pipelines in Python and Selenium to ingest, clean, validate, and structure healthcare data across multiple international platforms with locale-specific schemas.",
+          "Designed relational database schemas with embedded data quality checks, type validation, error handling and automated QA processes, ensuring reliable downstream analytics for longitudinal research.",
+          "Automated monitoring and pipeline diagnostics, improving  observability and operational stability while reducing manual intervention.",
+          "Collaborated with cross-institutional stakeholders to translate evolving research requirements into scalable technical solutions with clear documentation."
+        ]
+      },
+      {
+        "company": "Microsoft - Azure SDK Tools & Services",
+        "role": "Software Engineering Intern",
+        "date": "03/2024 - 07/2024",
+        "responsibilities": [
+          "Built a CI/CD pre-diagnostic tool in ASP.NET Core and C# that analyzed build data to prevent common pipeline failures, improving release reliability.",
+          "Developed real-time subscription and notification features using Azure Functions and Cosmos DB, enabling automatic API change and approval alerts.",
+          "Optimized data access layer by migrating to RESTful services; transitioned legacy .NET components to Angular, improving performance and traceability."
+        ]
+      },
+      {
+        "company": "Katayama Framing",
+        "role": "Design and Production Lead",
+        "date": "2013 - 2023",
+        "responsibilities": [
+          "Led custom framing operations for a high-end clientele over a decade, managing the full project lifecycle for 20+ concurrent projects while balancing client expectations, production schedules, quality standards, and delivery deadlines."
+        ]
       }
     ]
   },
@@ -107,8 +124,10 @@
         "name": "Certifications",
         "items": [
           {
-            "name": "Graduate - Ada Developers Academy",
-            "url": "https://adadevelopersacademy.org/"
+            "name": "B.S., Science - Portland State University"
+          },
+          {
+            "name": "Graduate - Ada Developers Academy"
           },
           "Databricks Fundamentals"
         ]
