@@ -218,6 +218,7 @@
 }
 
 /* Project Image */
+/*
 .project-image {
     width: 50%;
     height: auto;
@@ -234,6 +235,27 @@
     object-position: center;
     display: block;
 }
+*/
+
+/* Project Image - Tall image support */
+.project-image {
+    width: 50%;
+    max-height: 500px;
+    overflow-y: auto;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    padding: 0.5rem;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
 
 .project-image::after {
     content: '';
@@ -245,6 +267,26 @@
 
 [data-theme="dark"] .project-image::after {
     background: linear-gradient(to right, rgba(30, 41, 59, 0.1), transparent);
+}
+
+/* Scrollbar styling */
+.project-image::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-image::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 3px;
+}
+
+.project-image::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Remove the gradient overlay for tall images */
+.project-image::after {
+    display: none;
 }
 
 /* Projects on GitHub Section */
