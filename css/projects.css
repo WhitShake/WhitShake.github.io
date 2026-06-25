@@ -10,6 +10,8 @@
 
 .project-item {
     display: flex;
+    flex-direction: row;  /* ← Side by side */
+    align-items: stretch;  /* ← Make both columns equal height */
     margin-bottom: 1.5rem;
     background-color: var(--card-background);
     border-radius: var(--border-radius-2xl);
@@ -92,6 +94,7 @@
     padding: 1.5rem;
     max-height: none;
     overflow: visible;
+    min-width: 0;  /* ← Prevents overflow issues */
 }
 
 /* Project Content Links */
@@ -239,15 +242,18 @@
 
 /* Project Image - Tall image support */
 .project-image {
-    width: 50%;
-    max-height: 500px;
+    width: 40%; /*adjust as needed*/
+    max-height: none;
     overflow-y: auto;
     flex-shrink: 0;
     position: relative;
+    border-left: 1px solid var(--border-color);  /* ← Separator line */
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background: var(--background-color);
     padding: 0.5rem;
+    align-items: center;  /* ← Center image vertically */
+    justify-content: center;  /* ← Center image horizontally */
 }
 
 .project-image img {
@@ -255,6 +261,7 @@
     height: auto;
     display: block;
     border-radius: 4px;
+    object-fit: contain;  /* ← Show full image without cropping */
 }
 
 .project-image::after {
