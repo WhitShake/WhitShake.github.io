@@ -176,13 +176,11 @@ export class SectionManager {
               imageSrc
                 ? `
             <div class="project-image">
-                <img src="${imageSrc}" alt="${name} project screenshot" loading="lazy" class="project-thumbnail">
-                <div class="project-image-actions">
-                    <button class="image-action-btn lightbox-btn" aria-label="Enlarge image">
-                        <span class="material-symbols-outlined">zoom_in</span> Click to Enlarge
+                <button class="image-action-btn lightbox-btn" aria-label="Enlarge image" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.25rem;border-radius:9999px;border:2px solid var(--primary-color, #2563eb);background:var(--primary-color, #2563eb);color:white;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit;">
+                        <span class="material-symbols-outlined" style="font-size:1.125rem;">zoom_in</span> Click to Enlarge
                     </button>
-                    <a href="${imageSrc}" target="_blank" rel="noopener noreferrer" class="image-action-btn fullsize-link" aria-label="Open full size image in new tab">
-                        <span class="material-symbols-outlined">open_in_new</span> Open in New Tab
+                    <a href="${imageSrc}" target="_blank" rel="noopener noreferrer" class="image-action-btn fullsize-link" aria-label="Open full size image in new tab" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.25rem;border-radius:9999px;border:2px solid var(--border-color, #ccc);background:transparent;color:var(--text-color, #333);font-size:0.875rem;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:inherit;">
+                        <span class="material-symbols-outlined" style="font-size:1.125rem;">open_in_new</span> Open in New Tab
                     </a>
                 </div>
             </div>
@@ -422,8 +420,8 @@ export class SectionManager {
     overlay.innerHTML = `
             <div style="width:70%;max-width:900px;min-width:300px;display:flex;flex-direction:column;align-items:center;position:relative;">
                 <button style="position:sticky;top:0;align-self:flex-end;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;width:44px;height:44px;border-radius:50%;font-size:24px;cursor:pointer;z-index:10;margin-bottom:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;" aria-label="Close">✕</button>
-                <img src="${imageSrc}" alt="${projectName}" style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
                 <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;margin-top:20px;text-align:center;font-family:sans-serif;padding-bottom:40px;">${projectName} — Scroll down to see full diagram. Press ESC or click ✕ to close.</p>
+                <img src="${imageSrc}" alt="${projectName}" style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
             </div>
         `;
 
