@@ -791,6 +791,8 @@ h1 {
 
 .project-item {
     display: flex;
+    flex-direction: row;  /* ← Side by side */
+    align-items: stretch;  /* ← Make both columns equal height */
     margin-bottom: 1.5rem;
     background-color: var(--card-background);
     border-radius: var(--border-radius-2xl);
@@ -873,6 +875,7 @@ h1 {
     padding: 1.5rem;
     max-height: none;
     overflow: visible;
+    min-width: 0;  /* ← Prevents overflow issues */
 }
 
 /* Project Content Links */
@@ -999,6 +1002,7 @@ h1 {
 }
 
 /* Project Image */
+/*
 .project-image {
     width: 50%;
     height: auto;
@@ -1015,6 +1019,31 @@ h1 {
     object-position: center;
     display: block;
 }
+*/
+
+/* Project Image - Tall image support */
+.project-image {
+    width: 40%; /*adjust as needed*/
+    max-height: none;
+    overflow-y: auto;
+    flex-shrink: 0;
+    position: relative;
+    border-left: 1px solid var(--border-color);  /* ← Separator line */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background-color);
+    padding: 0.5rem;
+    align-items: center;  /* ← Center image vertically */
+    justify-content: center;  /* ← Center image horizontally */
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    object-fit: contain;  /* ← Show full image without cropping */
+}
 
 .project-image::after {
     content: '';
@@ -1026,6 +1055,26 @@ h1 {
 
 [data-theme="dark"] .project-image::after {
     background: linear-gradient(to right, rgba(30, 41, 59, 0.1), transparent);
+}
+
+/* Scrollbar styling */
+.project-image::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-image::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 3px;
+}
+
+.project-image::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Remove the gradient overlay for tall images */
+.project-image::after {
+    display: none;
 }
 
 /* Projects on GitHub Section */
