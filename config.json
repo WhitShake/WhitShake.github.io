@@ -54,7 +54,7 @@
         "description": [
           "A production-grade healthcare data pipeline in Python and Selenium to ingest, clean, normalize, validate, and structure 100,000+ physician records and 6,500+ linked scheduling entities for longitudinal research and analytics."
         ],
-        "picture": "/assets/projects/LAPS_Arch.pdf",
+        "picture": "/assets/projects/DoctolibScraper.png",
         "link": {
           "url": "https://WhitShake.github.io",
           "title": "View Live Site"
