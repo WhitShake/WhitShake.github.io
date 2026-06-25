@@ -52,10 +52,9 @@
         "name": "LAPS Healthcare Data Pipeline",
         "date": "June 3, 2026",
         "description": [
-          "A production-grade healthcare data pipeline in Python and Selenium to ingest, clean, normalize, validate, ",
-          "and structure 100,000+ physician records and 6,500+ linked scheduling entities for longitudinal research and analytics."
+          "A production-grade healthcare data pipeline in Python and Selenium to ingest, clean, normalize, validate, and structure 100,000+ physician records and 6,500+ linked scheduling entities for longitudinal research and analytics."
         ],
-        "picture": "assets/projects/Placeholder.png",
+        "picture": "assets/projects/LAPS_Arch.png",
         "link": {
           "url": "https://WhitShake.github.io",
           "title": "View Live Site"
