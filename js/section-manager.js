@@ -147,6 +147,7 @@ export class SectionManager {
     );
     const linksHtml = this.createProjectLinks(project);
     const imageSrc = this.safeUrl(project.picture);
+    console.log("Project:", name, "ImageSrc:", imageSrc); // ← ADD THIS
 
     projectItem.innerHTML = `
             <details class="project-details">
@@ -175,15 +176,17 @@ export class SectionManager {
             ${
               imageSrc
                 ? `
-            <div class="project-image">
-                <button class="image-action-btn lightbox-btn" aria-label="Enlarge image" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.25rem;border-radius:9999px;border:2px solid var(--primary-color, #2563eb);background:var(--primary-color, #2563eb);color:white;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit;">
-                        <span class="material-symbols-outlined" style="font-size:1.125rem;">zoom_in</span> Click to Enlarge
-                    </button>
-                    <a href="${imageSrc}" target="_blank" rel="noopener noreferrer" class="image-action-btn fullsize-link" aria-label="Open full size image in new tab" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1.25rem;border-radius:9999px;border:2px solid var(--border-color, #ccc);background:transparent;color:var(--text-color, #333);font-size:0.875rem;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:inherit;">
-                        <span class="material-symbols-outlined" style="font-size:1.125rem;">open_in_new</span> Open in New Tab
-                    </a>
+                <div class="project-image">
+                    <img src="${imageSrc}" alt="${name} project screenshot" loading="lazy" class="project-thumbnail">
+                    <div class="project-image-actions">
+                        <button class="image-action-btn lightbox-btn" aria-label="Enlarge image">
+                            <span class="material-symbols-outlined">zoom_in</span> Click to Enlarge
+                        </button>
+                        <a href="${imageSrc}" target="_blank" rel="noopener noreferrer" class="image-action-btn fullsize-link" aria-label="Open full size image in new tab">
+                            <span class="material-symbols-outlined">open_in_new</span> Open in New Tab
+                        </a>
+                    </div>
                 </div>
-            </div>
             `
                 : ""
             }

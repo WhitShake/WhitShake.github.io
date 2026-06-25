@@ -791,8 +791,8 @@ h1 {
 
 .project-item {
     display: flex;
-    flex-direction: row;  /* ← Side by side */
-    align-items: stretch;  /* ← Make both columns equal height */
+    flex-direction: row;
+    align-items: stretch;
     margin-bottom: 1.5rem;
     background-color: var(--card-background);
     border-radius: var(--border-radius-2xl);
@@ -803,10 +803,8 @@ h1 {
 }
 
 .project-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
-
 
 
 /* Project Header (mobile accordion) */
@@ -1021,60 +1019,107 @@ h1 {
 }
 */
 
-/* Project Image - Tall image support */
+/* Project Image Container - No scrollbar, no box */
 .project-image {
-    width: 40%; /*adjust as needed*/
-    max-height: none;
-    overflow-y: auto;
+    width: 40%;
     flex-shrink: 0;
     position: relative;
-    border-left: 1px solid var(--border-color);  /* ← Separator line */
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    overflow: hidden;
     background: var(--background-color);
-    padding: 0.5rem;
-    align-items: center;  /* ← Center image vertically */
-    justify-content: center;  /* ← Center image horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
-    object-fit: contain;  /* ← Show full image without cropping */
+    transition: opacity 0.3s ease;
 }
 
-.project-image::after {
-    content: '';
+/* Hide actions by default */
+.project-image-actions {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 5;
     pointer-events: none;
+    width: auto;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
-[data-theme="dark"] .project-image::after {
-    background: linear-gradient(to right, rgba(30, 41, 59, 0.1), transparent);
+/* Show actions on hover */
+.project-image:hover .project-image-actions {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
-/* Scrollbar styling */
-.project-image::-webkit-scrollbar {
-    width: 6px;
+/* Dim the image slightly on hover */
+.project-image:hover img {
+    opacity: 0.5;
 }
 
-.project-image::-webkit-scrollbar-track {
-    background: var(--background-color);
-    border-radius: 3px;
+/* Both buttons - identical styling */
+.image-action-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    border: 2px solid #2563eb !important;
+    background: #2563eb !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    line-height: 1.2 !important;
+    height: auto !important;
+    min-height: 40px !important;
+    white-space: nowrap !important;
 }
 
-.project-image::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 3px;
+.image-action-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+    border-color: #2563eb !important;
+    background: #2563eb !important;
+    color: white !important;
 }
 
-/* Remove the gradient overlay for tall images */
-.project-image::after {
-    display: none;
+/* "Open in New Tab" - slightly different style but same hover behavior */
+.image-action-btn.fullsize-link {
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+}
+
+.image-action-btn.fullsize-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+    border-color: white !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+}
+
+.image-action-btn .material-symbols-outlined {
+    font-size: 1.125rem !important;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20 !important;
 }
 
 /* Projects on GitHub Section */
@@ -1237,6 +1282,39 @@ h1 {
 
 .see-all-repos a .material-symbols-outlined {
     font-size: 1.25rem;
+}
+
+
+/* Both buttons - identical styling */
+.image-action-btn,
+.image-action-btn.fullsize-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    border: 2px solid #2563eb !important;
+    background: #2563eb !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    line-height: 1.2 !important;
+    min-height: 40px !important;
+    white-space: nowrap !important;
+}
+
+.image-action-btn:hover,
+.image-action-btn.fullsize-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+    border-color: #2563eb !important;
+    background: #2563eb !important;
+    color: white !important;
 }
 
 /* css/footer.css */
